@@ -20,6 +20,8 @@ interface PaginationProps {
 }
 
 export function Pagination({
+  initialPage = 1,
+  totalPages = 1,
   paginationWindow = 5,
   children,
 }: PaginationProps) {
@@ -30,7 +32,7 @@ export function Pagination({
     setNextPage,
     setPreviousPage,
     setPage,
-  } = usePagination(1)
+  } = usePagination(initialPage, totalPages)
 
   const pages = generateRange(
     currentPage - paginationWindow,
