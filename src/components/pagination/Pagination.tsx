@@ -2,7 +2,7 @@ import { ReactNode } from "react"
 import generateRange from "../../utils/generateRange"
 import { usePagination } from "./usePagination"
 
-interface ChildrenPaginationProps {
+interface PaginationChildrenProps {
   pages: Set<number>
   currentPage: number
   previousEnabled: boolean
@@ -16,7 +16,7 @@ interface PaginationProps {
   initialPage: number
   totalPages: number
   paginationWindow: number
-  children: (props: ChildrenPaginationProps) => ReactNode
+  children: (props: PaginationChildrenProps) => ReactNode
 }
 
 export function Pagination({
