@@ -17,14 +17,14 @@ Merrick Christensen in his [article about Headless User Inteface Components](htt
 
 ## List of components
 
-- Tabs
-- Stepper
-- Slider
-- Progress
-- Carousel
-- Pagination
-- Transfer
-- Upload
+- [Tabs](https://github.com/tpmarc/headless-mule/tree/main/src/components/tabs)
+- [Stepper](https://github.com/tpmarc/headless-mule/tree/main/src/components/stepper)
+- [Slider](https://github.com/tpmarc/headless-mule/tree/main/src/components/slider)
+- [Progress](https://github.com/tpmarc/headless-mule/tree/main/src/components/progress)
+- [Carousel](https://github.com/tpmarc/headless-mule/tree/main/src/components/carousel)
+- [Pagination](https://github.com/tpmarc/headless-mule/tree/main/src/components/pagination)
+- [Transfer](https://github.com/tpmarc/headless-mule/tree/main/src/components/transfer)
+- [Upload](https://github.com/tpmarc/headless-mule/tree/main/src/components/upload)
 
 ## Running this project
 
