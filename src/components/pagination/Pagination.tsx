@@ -35,8 +35,8 @@ export function Pagination({
   } = usePagination(initialPage, totalPages)
 
   const pages = generateRange(
-    currentPage - paginationWindow,
-    currentPage + paginationWindow
+    Math.max(1, currentPage - paginationWindow),
+    Math.min(totalPages, currentPage + paginationWindow)
   )
 
   children({
