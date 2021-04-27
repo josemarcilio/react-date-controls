@@ -1,6 +1,12 @@
-# Headless Mule 🔥🐎
+<h3 align="center">
+  Headless Mule 🔥🐎
+</h3>
 
-[Headless components](https://www.merrickchristensen.com/articles/headless-user-interface-components/) usually written in most of projects
+<p align="center">
+  [Headless components](https://www.merrickchristensen.com/articles/headless-user-interface-components/) usually written in most of projects
+</p>
+
+---
 
 ## List of components
 
