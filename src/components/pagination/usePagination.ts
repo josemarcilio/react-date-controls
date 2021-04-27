@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function usePagination(initialPage: number = 0, totalPages: number = 0) {
+export function usePagination(initialPage: number = 1, totalPages: number = 1) {
   if (initialPage > totalPages) {
     throw new Error("page is out of range")
   }
@@ -9,7 +9,7 @@ export function usePagination(initialPage: number = 0, totalPages: number = 0) {
 
   const setPreviousPage = () => {
     setCurrentPage((p) => {
-      return Math.min(0, p - 1)
+      return Math.min(1, p - 1)
     })
   }
 
@@ -20,10 +20,10 @@ export function usePagination(initialPage: number = 0, totalPages: number = 0) {
   }
 
   const setPage = (page: number) => {
-    setCurrentPage(Math.max(0, Math.min(totalPages, page)))
+    setCurrentPage(Math.max(1, Math.min(totalPages, page)))
   }
 
-  const previousEnabled = currentPage > 0
+  const previousEnabled = currentPage > 1
 
   const nextEnabled = currentPage + 1 < totalPages
 

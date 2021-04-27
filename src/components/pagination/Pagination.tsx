@@ -1,7 +1,9 @@
 import { ReactNode } from "react"
+import generateRange from "../../utils/generateRange"
 import { usePagination } from "./usePagination"
 
 interface ChildrenPaginationProps {
+  pages: Set<number>
   currentPage: number
   previousEnabled: boolean
   nextEnabled: boolean
@@ -11,10 +13,16 @@ interface ChildrenPaginationProps {
 }
 
 interface PaginationProps {
+  initialPage: number
+  totalPages: number
+  paginationWindow: number
   children: (props: ChildrenPaginationProps) => ReactNode
 }
 
-export function Pagination({ children }: PaginationProps) {
+export function Pagination({
+  paginationWindow = 5,
+  children,
+}: PaginationProps) {
   const {
     currentPage,
     previousEnabled,
@@ -22,9 +30,15 @@ export function Pagination({ children }: PaginationProps) {
     setNextPage,
     setPreviousPage,
     setPage,
-  } = usePagination()
+  } = usePagination(1)
+
+  const pages = generateRange(
+    currentPage - paginationWindow,
+    currentPage + paginationWindow
+  )
 
   children({
+    pages,
     currentPage,
     previousEnabled,
     nextEnabled,
