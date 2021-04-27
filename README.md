@@ -25,3 +25,17 @@ Merrick Christensen in his [article about Headless User Inteface Components](htt
 - Pagination
 - Transfer
 - Upload
+
+## Running this project
+
+### Storybook
+
+`npm run storybook`
+
+### Development server
+
+`npm run dev`
+
+### Build
+
+`npm run build`
