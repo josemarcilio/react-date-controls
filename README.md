@@ -15,16 +15,9 @@ Merrick Christensen in his [article about Headless User Inteface Components](htt
 
 </blockquote>
 
-## List of components
+## List of Components
 
-- [Tabs](https://github.com/tpmarc/headless-mule/tree/main/src/components/tabs)
-- [Stepper](https://github.com/tpmarc/headless-mule/tree/main/src/components/stepper)
-- [Slider](https://github.com/tpmarc/headless-mule/tree/main/src/components/slider)
-- [Progress](https://github.com/tpmarc/headless-mule/tree/main/src/components/progress)
-- [Carousel](https://github.com/tpmarc/headless-mule/tree/main/src/components/carousel)
-- [Pagination](https://github.com/tpmarc/headless-mule/tree/main/src/components/pagination)
-- [Transfer](https://github.com/tpmarc/headless-mule/tree/main/src/components/transfer)
-- [Upload](https://github.com/tpmarc/headless-mule/tree/main/src/components/upload)
+- [Calendar](https://github.com/tpmarc/headless-mule/tree/main/src/components/calendar)
 
 ## Running this project
 
