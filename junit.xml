@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="1" failures="1" errors="0" time="3.189">
+  <testsuite name="undefined" errors="0" failures="1" skipped="0" timestamp="2021-05-02T23:46:23" time="2.422" tests="1">
+    <testcase classname=" should increment counter" name=" should increment counter" time="0.018">
+      <failure>Error: expect(received).toHaveLength(expected)
+
+Expected length: 30
+Received length: 0
+Received array:  []
+    at Object.&lt;anonymous&gt; (C:\Users\marci\Source\headless-mule\src\hooks\calendar\useCalendar.spec.ts:13:32)
+    at Object.asyncJestTest (C:\Users\marci\Source\headless-mule\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:106:37)
+    at C:\Users\marci\Source\headless-mule\node_modules\jest-jasmine2\build\queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Users\marci\Source\headless-mule\node_modules\jest-jasmine2\build\queueRunner.js:28:19)
+    at C:\Users\marci\Source\headless-mule\node_modules\jest-jasmine2\build\queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:94:5)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

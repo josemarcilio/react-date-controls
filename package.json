@@ -1,10 +1,12 @@
 {
   "name": "headless-mule",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
+    "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -14,16 +16,25 @@
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
+    "@babel/preset-typescript": "^7.13.0",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/react": "^6.2.9",
+    "@testing-library/react-hooks": "^5.1.2",
+    "@types/jest": "^26.0.23",
     "@types/node": "^15.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@vitejs/plugin-react-refresh": "^1.3.1",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
+    "jest": "^26.6.3",
+    "jest-junit": "^12.0.0",
+    "ts-jest": "^26.5.5",
+    "ts-node": "^9.1.1",
     "typescript": "^4.1.2",
     "vite": "^2.1.5"
   }
