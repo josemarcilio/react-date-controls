@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="1" errors="0" time="3.189">
-  <testsuite name="undefined" errors="0" failures="1" skipped="0" timestamp="2021-05-02T23:46:23" time="2.422" tests="1">
-    <testcase classname=" should increment counter" name=" should increment counter" time="0.018">
-      <failure>Error: expect(received).toHaveLength(expected)
-
-Expected length: 30
-Received length: 0
-Received array:  []
-    at Object.&lt;anonymous&gt; (C:\Users\marci\Source\headless-mule\src\hooks\calendar\useCalendar.spec.ts:13:32)
-    at Object.asyncJestTest (C:\Users\marci\Source\headless-mule\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:106:37)
-    at C:\Users\marci\Source\headless-mule\node_modules\jest-jasmine2\build\queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (C:\Users\marci\Source\headless-mule\node_modules\jest-jasmine2\build\queueRunner.js:28:19)
-    at C:\Users\marci\Source\headless-mule\node_modules\jest-jasmine2\build\queueRunner.js:75:41
-    at processTicksAndRejections (node:internal/process/task_queues:94:5)</failure>
+<testsuites name="jest tests" tests="6" failures="0" errors="0" time="4.053">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-03T04:36:51" time="0.892" tests="1">
+    <testcase classname=" should generate correct number of days of week" name=" should generate correct number of days of week" time="0.015">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-03T04:36:51" time="1.222" tests="3">
+    <testcase classname=" should generate correct dates for a month with no selected dates" name=" should generate correct dates for a month with no selected dates" time="0.016">
+    </testcase>
+    <testcase classname=" should generate correct dates for a month with selected dates" name=" should generate correct dates for a month with selected dates" time="0.002">
+    </testcase>
+    <testcase classname=" should generate correct selected dates without selections from other months" name=" should generate correct selected dates without selections from other months" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-03T04:36:51" time="2.882" tests="2">
+    <testcase classname=" should start with no selected dates and select one" name=" should start with no selected dates and select one" time="0.019">
+    </testcase>
+    <testcase classname=" should start with selected date and unselect it" name=" should start with selected date and unselect it" time="0.007">
     </testcase>
   </testsuite>
 </testsuites>

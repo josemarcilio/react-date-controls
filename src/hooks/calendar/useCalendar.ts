@@ -1,54 +1,43 @@
-import {
-  addDays,
-  endOfMonth,
-  getMonth,
-  isSameDay,
-  startOfMonth,
-} from "date-fns"
-
-function useCalendarHeader() {
-  const daysOfWeek = Array(7).keys()
-
-  return { daysOfWeek }
-}
-
-type UseCalendarDatesProps = {
-  month: number
-  selectedDates: Date[]
-}
-
-type CalendarDate = {
-  value: Date
-  isSelected: boolean
-}
-
-function useCalendarDates(props: UseCalendarDatesProps): CalendarDate[] {
-  const { month, selectedDates } = props
-  const dates: CalendarDate[] = []
-
-  let cursor = startOfMonth(month)
-
-  while (isSameDay(cursor, endOfMonth(month))) {
-    const isSelected = selectedDates.some((date) => isSameDay(date, cursor))
-
-    dates.push({ value: cursor, isSelected })
-    cursor = addDays(cursor, 1)
-  }
-
-  return dates
-}
+import { useContext, useEffect } from "react"
+import { CalendarContext } from "./CalendarContext"
+import { useCalendarDates } from "./useCalendarDates"
+import { useCalendarHeader } from "./useCalendarHeader"
 
 export type UseCalendarProps = {
   month: Date
-  selectedDates: Date[]
+  initialSelectedDates: Date[]
   onSelectDate?: (selecteDate: Date) => void
 }
 
 export function useCalendar(props: UseCalendarProps) {
-  const { month, selectedDates } = props
+  const { month, initialSelectedDates } = props
+  const { state, dispatch } = useContext(CalendarContext)
+
+  const { selectedDates } = state
 
   const { daysOfWeek } = useCalendarHeader()
-  const dates = useCalendarDates({ month: getMonth(month), selectedDates })
 
-  return { daysOfWeek, dates }
+  const dates = useCalendarDates({ month, selectedDates })
+
+  const selectDate = (date: Date) =>
+    dispatch({ type: "SelectDate", payload: date })
+
+  const unselectDate = (date: Date) =>
+    dispatch({ type: "UnselectDate", payload: date })
+
+  const selectDates = (dates: Date[]) =>
+    dispatch({ type: "SelectDates", payload: dates })
+
+  useEffect(() => {
+    dispatch({ type: "SelectDates", payload: initialSelectedDates })
+  }, [])
+
+  return {
+    dates,
+    daysOfWeek,
+    selectedDates,
+    selectDate,
+    unselectDate,
+    selectDates,
+  }
 }
