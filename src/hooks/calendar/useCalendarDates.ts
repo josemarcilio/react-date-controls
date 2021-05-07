@@ -8,12 +8,7 @@ import {
 } from "date-fns"
 import { useEffect } from "react"
 
-type UseCalendarDatesProps = {
-  month: Date
-  selectedDates: Date[]
-}
-
-type CalendarDate = {
+export type CalendarDate = {
   value: Date
   isSelected: boolean
 }
@@ -35,6 +30,11 @@ function generateDates(month: Date, selectedDates: Date[]) {
   }
 
   return dates
+}
+
+type UseCalendarDatesProps = {
+  month: Date
+  selectedDates: Date[]
 }
 
 export function useCalendarDates(props: UseCalendarDatesProps): CalendarDate[] {
