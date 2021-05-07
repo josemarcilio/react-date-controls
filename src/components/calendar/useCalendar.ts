@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect } from "react"
 import { CalendarContext } from "./CalendarContext"
 import { CalendarActions } from "./types/calendarReducer.types"
 import type {
@@ -9,9 +9,10 @@ import { useCalendarDates } from "./useCalendarDates"
 import { useCalendarHeader } from "./useCalendarHeader"
 import { filterDatesByMonth } from "./utils/filterDatesByMonth"
 
-export function useCalendar(props: UseCalendarProps): UseCalendarShape {
-  const { initialMonth, initialSelectedDates } = props
-  const [month] = useState(initialMonth)
+export function useCalendar({
+  initialMonth: month,
+  initialSelectedDates,
+}: UseCalendarProps): UseCalendarShape {
   const { state, dispatch } = useContext(CalendarContext)
 
   const { selectedDates } = state
@@ -37,8 +38,8 @@ export function useCalendar(props: UseCalendarProps): UseCalendarShape {
     dispatch({ type: CalendarActions.ClearSelectedDates })
 
   useEffect(() => {
-    selectDates(initialSelectedDates)
-  }, [])
+    selectDates(filterDatesByMonth(initialSelectedDates, month))
+  }, [month, initialSelectedDates])
 
   return {
     month,

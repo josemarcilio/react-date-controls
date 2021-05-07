@@ -30,10 +30,10 @@ function assertCalendarDates(
   })
 }
 
-test("should not be able to change month", () => {
+test("should generate new selected dates on change month or selected dates", () => {
   const initialMonth = new Date(2021, 4, 1)
   let month = initialMonth
-  const selectedDates = [new Date(2021, 4, 1)]
+  let selectedDates = [new Date(2021, 4, 1)]
 
   const calendarProvider = ({ children }: { children: any }) => (
     <CalendarProvider>{children}</CalendarProvider>
@@ -45,10 +45,25 @@ test("should not be able to change month", () => {
     { wrapper: calendarProvider }
   )
 
+  assertCalendarDates(
+    selectedDates,
+    result.current.selectedDates,
+    result.current.dates
+  )
+
   month = new Date(2021, 8, 8)
   rerender()
 
-  expect(result.current.month).toEqual(initialMonth)
+  expect(result.current.month).toEqual(month)
+
+  assertCalendarDates([], result.current.selectedDates, result.current.dates)
+
+  selectedDates = [
+    new Date(2021, 8, 4),
+    new Date(2021, 8, 5),
+    new Date(2021, 8, 6),
+  ]
+  rerender()
 
   assertCalendarDates(
     selectedDates,
