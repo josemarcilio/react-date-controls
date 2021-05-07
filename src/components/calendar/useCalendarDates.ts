@@ -1,8 +1,5 @@
 import { useEffect } from "react"
-import type {
-  UseCalendarDatesProps,
-  UseCalendarDatesShape,
-} from "./types/useCalendarDates.types"
+import type { UseCalendarDatesProps, UseCalendarDatesShape } from "./types"
 import { filterDatesByMonth } from "./utils/filterDatesByMonth"
 import { generateDates } from "./utils/generateDates"
 

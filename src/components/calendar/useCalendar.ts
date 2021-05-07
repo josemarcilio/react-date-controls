@@ -1,10 +1,7 @@
 import { useContext, useEffect } from "react"
 import { CalendarContext } from "./CalendarContext"
-import { CalendarActions } from "./types/calendarReducer.types"
-import type {
-  UseCalendarProps,
-  UseCalendarShape,
-} from "./types/useCalendar.types"
+import type { UseCalendarProps, UseCalendarShape } from "./types"
+import { CalendarActions } from "./types"
 import { useCalendarDates } from "./useCalendarDates"
 import { useCalendarHeader } from "./useCalendarHeader"
 import { filterDatesByMonth } from "./utils/filterDatesByMonth"

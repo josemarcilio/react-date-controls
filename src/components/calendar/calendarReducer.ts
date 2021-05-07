@@ -1,9 +1,6 @@
 import { isEqual, startOfDay } from "date-fns"
-import type {
-  CalendarActionShape,
-  CalendarStateShape,
-} from "./types/calendarReducer.types"
-import { CalendarActions } from "./types/calendarReducer.types"
+import type { CalendarActionShape, CalendarStateShape } from "./types"
+import { CalendarActions } from "./types"
 
 const calendarReducer = (
   state: CalendarStateShape,

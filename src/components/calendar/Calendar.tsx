@@ -2,7 +2,7 @@ import React from "react"
 import { LocalesContext } from "../common/LocalesContext"
 import { CalendarProvider } from "./CalendarContext"
 import { CalendarDate } from "./CalendarDate"
-import type { CalendarProps } from "./types/Calendar.types"
+import type { CalendarProps } from "./types"
 import { useCalendar } from "./useCalendar"
 
 function Calendar({

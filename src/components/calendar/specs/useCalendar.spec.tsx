@@ -2,7 +2,7 @@ import { act, renderHook } from "@testing-library/react-hooks"
 import { isEqual, startOfDay } from "date-fns"
 import React from "react"
 import { CalendarProvider } from "../CalendarContext"
-import type { CalendarDateShape } from "../types/useCalendarDates.types"
+import type { CalendarDateShape } from "../types"
 import { useCalendar } from "../useCalendar"
 
 function assertCalendarDates(

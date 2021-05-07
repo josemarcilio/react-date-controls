@@ -1,9 +1,6 @@
 import React, { createContext, useReducer } from "react"
 import calendarReducer from "./calendarReducer"
-import type {
-  CalendarProviderProps,
-  CalendarStoreShape,
-} from "./types/CalendarContext.types"
+import type { CalendarProviderProps, CalendarStoreShape } from "./types"
 
 const initialSelectedDates: Date[] = []
 

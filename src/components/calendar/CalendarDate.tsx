@@ -1,7 +1,7 @@
 import { getDate, getDay } from "date-fns"
 import React, { useContext } from "react"
 import { LocalesContext } from "../common/LocalesContext"
-import type { CalendarDateProps } from "./types/CalendarDate.types"
+import type { CalendarDateProps } from "./types"
 
 export function CalendarDate({ children, date }: CalendarDateProps) {
   const locales = useContext(LocalesContext)
