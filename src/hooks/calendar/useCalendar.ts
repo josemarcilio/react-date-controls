@@ -2,7 +2,7 @@ import { getMonth } from "date-fns"
 import { useContext, useEffect, useState } from "react"
 import { CalendarContext } from "./CalendarContext"
 import { CalendarActions } from "./calendarReducer"
-import { useCalendarDates } from "./useCalendarDates"
+import { CalendarDate, useCalendarDates } from "./useCalendarDates"
 import { useCalendarHeader } from "./useCalendarHeader"
 
 export type UseCalendarProps = {
@@ -11,7 +11,18 @@ export type UseCalendarProps = {
   onSelectDate?: (selecteDate: Date) => void
 }
 
-export function useCalendar(props: UseCalendarProps) {
+export type UseCalendarResult = {
+  month: Date
+  dates: CalendarDate[]
+  daysOfWeek: number[]
+  selectedDates: Date[]
+  selectDate: (date: Date) => void
+  unselectDate: (date: Date) => void
+  selectDates: (date: Date[]) => void
+  clearSelectedDates: () => void
+}
+
+export function useCalendar(props: UseCalendarProps): UseCalendarResult {
   const { initialMonth, initialSelectedDates } = props
   const [month] = useState(initialMonth)
   const { state, dispatch } = useContext(CalendarContext)
