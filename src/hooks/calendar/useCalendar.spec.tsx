@@ -30,8 +30,35 @@ function assertCalendarDates(
   })
 }
 
+test("should not be able to change month", () => {
+  const initialMonth = new Date(2021, 4, 1)
+  let month = initialMonth
+  const selectedDates = [new Date(2021, 4, 1)]
+
+  const calendarProvider = ({ children }: { children: any }) => (
+    <CalendarProvider>{children}</CalendarProvider>
+  )
+
+  const { result, rerender } = renderHook(
+    () =>
+      useCalendar({ initialMonth: month, initialSelectedDates: selectedDates }),
+    { wrapper: calendarProvider }
+  )
+
+  month = new Date(2021, 8, 8)
+  rerender()
+
+  expect(result.current.month).toEqual(initialMonth)
+
+  assertCalendarDates(
+    selectedDates,
+    result.current.selectedDates,
+    result.current.dates
+  )
+})
+
 test("should start with selected dates", () => {
-  const month = new Date(2021, 4, 1)
+  const initialMonth = new Date(2021, 4, 1)
   const selectedDates = [
     new Date(2021, 4, 1),
     new Date(2021, 4, 2),
@@ -42,7 +69,7 @@ test("should start with selected dates", () => {
     <CalendarProvider>{children}</CalendarProvider>
   )
   const { result } = renderHook(
-    () => useCalendar({ month, initialSelectedDates: selectedDates }),
+    () => useCalendar({ initialMonth, initialSelectedDates: selectedDates }),
     { wrapper: calendarProvider }
   )
 
@@ -54,15 +81,39 @@ test("should start with selected dates", () => {
   )
 })
 
+test("should ignore selected dates from other months", () => {
+  const initialMonth = new Date(2021, 4, 1)
+  const selectedDates = [
+    new Date(2021, 8, 1),
+    new Date(2021, 3, 2),
+    new Date(2021, 4, 3),
+  ]
+
+  const calendarProvider = ({ children }: { children: any }) => (
+    <CalendarProvider>{children}</CalendarProvider>
+  )
+  const { result } = renderHook(
+    () => useCalendar({ initialMonth, initialSelectedDates: selectedDates }),
+    { wrapper: calendarProvider }
+  )
+
+  expect(result.current.selectedDates).toHaveLength(1)
+  assertCalendarDates(
+    [new Date(2021, 4, 3)],
+    result.current.selectedDates,
+    result.current.dates
+  )
+})
+
 test("should start with no selected dates and select one", () => {
-  const month = new Date(2021, 4, 1)
+  const initialMonth = new Date(2021, 4, 1)
   const selectedDates: Date[] = []
 
   const calendarProvider = ({ children }: { children: any }) => (
     <CalendarProvider>{children}</CalendarProvider>
   )
   const { result } = renderHook(
-    () => useCalendar({ month, initialSelectedDates: selectedDates }),
+    () => useCalendar({ initialMonth, initialSelectedDates: selectedDates }),
     { wrapper: calendarProvider }
   )
 
@@ -82,7 +133,7 @@ test("should start with no selected dates and select one", () => {
 })
 
 test("should start with selected date and unselect it", () => {
-  const month = new Date(2021, 4, 1)
+  const initialMonth = new Date(2021, 4, 1)
   const selectedDate = new Date(2021, 4, 2)
   const selectedDates = [selectedDate]
 
@@ -90,7 +141,7 @@ test("should start with selected date and unselect it", () => {
     <CalendarProvider>{children}</CalendarProvider>
   )
   const { result } = renderHook(
-    () => useCalendar({ month, initialSelectedDates: selectedDates }),
+    () => useCalendar({ initialMonth, initialSelectedDates: selectedDates }),
     { wrapper: calendarProvider }
   )
 
@@ -102,14 +153,14 @@ test("should start with selected date and unselect it", () => {
 })
 
 test("should replace selected dates", () => {
-  const month = new Date(2021, 4, 1)
+  const initialMonth = new Date(2021, 4, 1)
   const selectedDates = [new Date(2021, 4, 1)]
 
   const calendarProvider = ({ children }: { children: any }) => (
     <CalendarProvider>{children}</CalendarProvider>
   )
   const { result } = renderHook(
-    () => useCalendar({ month, initialSelectedDates: selectedDates }),
+    () => useCalendar({ initialMonth, initialSelectedDates: selectedDates }),
     { wrapper: calendarProvider }
   )
 
@@ -130,7 +181,7 @@ test("should replace selected dates", () => {
 })
 
 test("should clear selected dates", () => {
-  const month = new Date(2021, 4, 1)
+  const initialMonth = new Date(2021, 4, 1)
   const selectedDates = [
     new Date(2021, 4, 2),
     new Date(2021, 4, 3),
@@ -141,7 +192,7 @@ test("should clear selected dates", () => {
     <CalendarProvider>{children}</CalendarProvider>
   )
   const { result } = renderHook(
-    () => useCalendar({ month, initialSelectedDates: selectedDates }),
+    () => useCalendar({ initialMonth, initialSelectedDates: selectedDates }),
     { wrapper: calendarProvider }
   )
 
