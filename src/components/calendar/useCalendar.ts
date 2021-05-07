@@ -1,28 +1,15 @@
-import { getMonth } from "date-fns"
 import { useContext, useEffect, useState } from "react"
 import { CalendarContext } from "./CalendarContext"
-import { CalendarActions } from "./calendarReducer"
-import { CalendarDate, useCalendarDates } from "./useCalendarDates"
+import { CalendarActions } from "./types/calendarReducer.types"
+import type {
+  UseCalendarProps,
+  UseCalendarShape,
+} from "./types/useCalendar.types"
+import { useCalendarDates } from "./useCalendarDates"
 import { useCalendarHeader } from "./useCalendarHeader"
+import { filterDatesByMonth } from "./utils/filterDatesByMonth"
 
-export type UseCalendarProps = {
-  initialMonth: Date
-  initialSelectedDates: Date[]
-  onSelectDate?: (selecteDate: Date) => void
-}
-
-export type UseCalendarType = {
-  month: Date
-  dates: CalendarDate[]
-  daysOfWeek: number[]
-  selectedDates: Date[]
-  selectDate: (date: Date) => void
-  unselectDate: (date: Date) => void
-  selectDates: (date: Date[]) => void
-  clearSelectedDates: () => void
-}
-
-export function useCalendar(props: UseCalendarProps): UseCalendarType {
+export function useCalendar(props: UseCalendarProps): UseCalendarShape {
   const { initialMonth, initialSelectedDates } = props
   const [month] = useState(initialMonth)
   const { state, dispatch } = useContext(CalendarContext)
@@ -33,12 +20,8 @@ export function useCalendar(props: UseCalendarProps): UseCalendarType {
 
   const dates = useCalendarDates({ month, selectedDates })
 
-  const filter = (dates: Date[]) => {
-    return dates.filter((date) => getMonth(date) === getMonth(month))
-  }
-
   const selectDate = (date: Date) => {
-    const [filtered] = filter([date])
+    const [filtered] = filterDatesByMonth([date], month)
     dispatch({ type: CalendarActions.SelectDate, payload: filtered })
   }
 
@@ -46,7 +29,7 @@ export function useCalendar(props: UseCalendarProps): UseCalendarType {
     dispatch({ type: CalendarActions.UnselectDate, payload: date })
 
   const selectDates = (dates: Date[]) => {
-    const filtered = filter(dates)
+    const filtered = filterDatesByMonth(dates, month)
     dispatch({ type: CalendarActions.SelectDates, payload: filtered })
   }
 

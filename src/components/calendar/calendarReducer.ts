@@ -1,34 +1,14 @@
 import { isEqual, startOfDay } from "date-fns"
+import type {
+  CalendarActionShape,
+  CalendarStateShape,
+} from "./types/calendarReducer.types"
+import { CalendarActions } from "./types/calendarReducer.types"
 
-export type CalendarState = {
-  selectedDates: Date[]
-}
-
-export enum CalendarActions {
-  SelectDate,
-  UnselectDate,
-  SelectDates,
-  ClearSelectedDates,
-}
-
-export type CalendarAction =
-  | {
-      type: CalendarActions.SelectDate
-      payload: Date
-    }
-  | {
-      type: CalendarActions.UnselectDate
-      payload: Date
-    }
-  | {
-      type: CalendarActions.SelectDates
-      payload: Date[]
-    }
-  | {
-      type: CalendarActions.ClearSelectedDates
-    }
-
-const calendarReducer = (state: CalendarState, action: CalendarAction) => {
+const calendarReducer = (
+  state: CalendarStateShape,
+  action: CalendarActionShape
+) => {
   switch (action.type) {
     case CalendarActions.SelectDate:
       return {

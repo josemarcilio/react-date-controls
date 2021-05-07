@@ -1,14 +1,14 @@
 import { act, renderHook } from "@testing-library/react-hooks"
 import { isEqual, startOfDay } from "date-fns"
 import React from "react"
-import { CalendarProvider } from "./CalendarContext"
-import { useCalendar } from "./useCalendar"
-import type { CalendarDate } from "./useCalendarDates"
+import { CalendarProvider } from "../CalendarContext"
+import type { CalendarDateShape } from "../types/useCalendarDates.types"
+import { useCalendar } from "../useCalendar"
 
 function assertCalendarDates(
   expectedSelectedDates: Date[],
   actualSelectedDates: Date[],
-  calendarDates: CalendarDate[]
+  calendarDates: CalendarDateShape[]
 ) {
   expect(actualSelectedDates).toHaveLength(expectedSelectedDates.length)
 
