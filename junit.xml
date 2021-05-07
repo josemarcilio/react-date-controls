@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="8" failures="0" errors="0" time="4.016">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-07T03:06:57" time="0.832" tests="1">
+<testsuites name="jest tests" tests="9" failures="0" errors="0" time="4.613">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-07T04:06:51" time="0.839" tests="1">
     <testcase classname=" should generate correct number of days of week" name=" should generate correct number of days of week" time="0.014">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-07T03:06:57" time="2.889" tests="7">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-07T04:06:51" time="1.207" tests="7">
     <testcase classname=" should not be able to change month" name=" should not be able to change month" time="0.02">
     </testcase>
-    <testcase classname=" should start with selected dates" name=" should start with selected dates" time="0.005">
+    <testcase classname=" should start with selected dates" name=" should start with selected dates" time="0.004">
     </testcase>
-    <testcase classname=" should ignore selected dates from other months" name=" should ignore selected dates from other months" time="0.006">
+    <testcase classname=" should ignore selected dates from other months" name=" should ignore selected dates from other months" time="0.004">
     </testcase>
-    <testcase classname=" should start with no selected dates and select one" name=" should start with no selected dates and select one" time="0.004">
+    <testcase classname=" should start with no selected dates and select one" name=" should start with no selected dates and select one" time="0.007">
     </testcase>
     <testcase classname=" should start with selected date and unselect it" name=" should start with selected date and unselect it" time="0.004">
     </testcase>
     <testcase classname=" should replace selected dates" name=" should replace selected dates" time="0.006">
     </testcase>
     <testcase classname=" should clear selected dates" name=" should clear selected dates" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-07T04:06:51" time="3.41" tests="1">
+    <testcase classname=" should render calendar component" name=" should render calendar component" time="0.035">
     </testcase>
   </testsuite>
 </testsuites>

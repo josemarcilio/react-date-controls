@@ -1,22 +1,32 @@
 import React, { ReactNode } from "react"
 import { CalendarProvider } from "./CalendarContext"
-import { useCalendar, UseCalendarResult } from "./useCalendar"
+import { useCalendar, UseCalendarType } from "./useCalendar"
+
+export type CalendarType = UseCalendarType & {
+  monthName: string
+}
 
 export type CalendarProps = {
+  children: (props: CalendarType) => ReactNode
   initialMonth: Date
   initialSelectedDates: Date[]
-  children: (props: UseCalendarResult) => ReactNode
+  locales?: string
 }
 
 export function Calendar({
+  children,
   initialMonth,
   initialSelectedDates,
-  children,
+  locales = "default",
 }: CalendarProps) {
   const calendar = useCalendar({
     initialMonth,
     initialSelectedDates,
   })
 
-  return <CalendarProvider>{children(calendar)}</CalendarProvider>
+  const monthName = calendar.month.toLocaleString(locales, { month: "long" })
+
+  const args = { ...calendar, monthName }
+
+  return <CalendarProvider>{children(args)}</CalendarProvider>
 }

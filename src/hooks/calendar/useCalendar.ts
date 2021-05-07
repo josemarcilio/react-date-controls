@@ -11,7 +11,7 @@ export type UseCalendarProps = {
   onSelectDate?: (selecteDate: Date) => void
 }
 
-export type UseCalendarResult = {
+export type UseCalendarType = {
   month: Date
   dates: CalendarDate[]
   daysOfWeek: number[]
@@ -22,7 +22,7 @@ export type UseCalendarResult = {
   clearSelectedDates: () => void
 }
 
-export function useCalendar(props: UseCalendarProps): UseCalendarResult {
+export function useCalendar(props: UseCalendarProps): UseCalendarType {
   const { initialMonth, initialSelectedDates } = props
   const [month] = useState(initialMonth)
   const { state, dispatch } = useContext(CalendarContext)
