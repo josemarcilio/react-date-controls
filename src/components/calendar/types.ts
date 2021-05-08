@@ -9,7 +9,7 @@ export interface UseCalendarProps {
 export interface UseCalendarShape {
   month: Date
   dates: CalendarDateShape[]
-  daysOfWeek: number[]
+  daysOfWeek: Date[]
   selectedDates: Date[]
   selectDate: (date: Date) => void
   unselectDate: (date: Date) => void
@@ -79,7 +79,7 @@ export type CalendarChildrenShape = UseCalendarShape & {
 
 export interface CalendarDateChildrenValue {
   dayOfMonth: number
-  weekday: number
+  weekday: 0 | 1 | 2 | 3 | 4 | 5 | 6
   weekdayLong: string
   weekdayShort: string
   weekdayNarrow: string
@@ -88,4 +88,16 @@ export interface CalendarDateChildrenValue {
 export interface CalendarDateProps {
   children: (value: CalendarDateChildrenValue) => ReactNode
   date: CalendarDateShape
+}
+
+export interface CalendarWeekdayChildrenValue {
+  day: 0 | 1 | 2 | 3 | 4 | 5 | 6
+  long: string
+  short: string
+  narrow: string
+}
+
+export interface CalendarWeekdayProps {
+  children: (value: CalendarWeekdayChildrenValue) => ReactNode
+  date: Date
 }

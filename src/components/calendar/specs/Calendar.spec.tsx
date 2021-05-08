@@ -62,3 +62,37 @@ test("should render CalendarDate component", () => {
     </Calendar>
   )
 })
+
+test("should render CalendarWeekDay component", () => {
+  const initialMonth = new Date(2021, 4, 1)
+  const locales = "default"
+
+  render(
+    <Calendar
+      initialMonth={initialMonth}
+      initialSelectedDates={[]}
+      locales={locales}
+    >
+      {({ daysOfWeek: [firstDayOfWeek] }) => (
+        <>
+          <Calendar.Weekday date={firstDayOfWeek}>
+            {({ day, long, short, narrow }) => {
+              expect(day).toEqual(getDay(firstDayOfWeek))
+              expect(long).toEqual(
+                firstDayOfWeek.toLocaleString(locales, { weekday: "long" })
+              )
+              expect(short).toEqual(
+                firstDayOfWeek.toLocaleString(locales, { weekday: "short" })
+              )
+              expect(narrow).toEqual(
+                firstDayOfWeek.toLocaleString(locales, { weekday: "narrow" })
+              )
+
+              return <></>
+            }}
+          </Calendar.Weekday>
+        </>
+      )}
+    </Calendar>
+  )
+})

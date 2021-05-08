@@ -2,6 +2,7 @@ import React from "react"
 import { LocalesContext } from "../common/LocalesContext"
 import { CalendarProvider } from "./CalendarContext"
 import { CalendarDate } from "./CalendarDate"
+import { CalendarWeekday } from "./CalendarWeekday"
 import type { CalendarProps } from "./types"
 import { useCalendar } from "./useCalendar"
 
@@ -28,5 +29,6 @@ function Calendar({
 }
 
 Calendar.Date = CalendarDate
+Calendar.Weekday = CalendarWeekday
 
 export { Calendar }
