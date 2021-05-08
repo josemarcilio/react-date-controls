@@ -80,9 +80,6 @@ export type CalendarChildrenShape = UseCalendarShape & {
 export interface CalendarDateChildrenValue {
   dayOfMonth: number
   weekday: 0 | 1 | 2 | 3 | 4 | 5 | 6
-  weekdayLong: string
-  weekdayShort: string
-  weekdayNarrow: string
 }
 
 export interface CalendarDateProps {

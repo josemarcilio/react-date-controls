@@ -35,24 +35,9 @@ test("should render CalendarDate component", () => {
       {({ dates: [date] }) => (
         <>
           <Calendar.Date date={date}>
-            {({
-              dayOfMonth,
-              weekday,
-              weekdayLong,
-              weekdayShort,
-              weekdayNarrow,
-            }) => {
+            {({ dayOfMonth, weekday }) => {
               expect(dayOfMonth).toEqual(getDate(firstDate))
               expect(weekday).toEqual(getDay(firstDate))
-              expect(weekdayLong).toEqual(
-                firstDate.toLocaleString(locales, { weekday: "long" })
-              )
-              expect(weekdayShort).toEqual(
-                firstDate.toLocaleString(locales, { weekday: "short" })
-              )
-              expect(weekdayNarrow).toEqual(
-                firstDate.toLocaleString(locales, { weekday: "narrow" })
-              )
 
               return <></>
             }}
