@@ -1,4 +1,4 @@
-import { Dispatch, ReactNode } from "react"
+import { ReactNode } from "react"
 
 export interface UseCalendarProps {
   initialMonth: Date
@@ -58,36 +58,34 @@ export type CalendarActionShape =
     }
 
 export type CalendarProviderProps = {
+  initialMonth: Date
+  initialSelectedDates: Date[]
   children: ReactNode
 }
 
 export type CalendarStoreShape = {
-  state: CalendarStateShape
-  dispatch: Dispatch<CalendarActionShape>
+  calendar: UseCalendarShape
 }
 
 export type CalendarProps = {
-  children: (value: CalendarChildrenShape) => ReactNode
+  children: ReactNode
   initialMonth: Date
   initialSelectedDates: Date[]
   locales?: string
 }
 
-export type CalendarChildrenShape = UseCalendarShape & {
-  monthName: string
-}
-
 export interface CalendarDateChildrenValue {
+  date: CalendarDateShape
   dayOfMonth: number
   weekday: 0 | 1 | 2 | 3 | 4 | 5 | 6
 }
 
 export interface CalendarDateProps {
   children: (value: CalendarDateChildrenValue) => ReactNode
-  date: CalendarDateShape
 }
 
 export interface CalendarWeekdayChildrenValue {
+  date: Date
   day: 0 | 1 | 2 | 3 | 4 | 5 | 6
   long: string
   short: string
@@ -96,5 +94,4 @@ export interface CalendarWeekdayChildrenValue {
 
 export interface CalendarWeekdayProps {
   children: (value: CalendarWeekdayChildrenValue) => ReactNode
-  date: Date
 }

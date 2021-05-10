@@ -1,16 +1,22 @@
-import { useContext, useEffect } from "react"
-import { CalendarContext } from "./CalendarContext"
+import { useEffect, useReducer } from "react"
+import calendarReducer from "./calendarReducer"
 import type { UseCalendarProps, UseCalendarShape } from "./types"
 import { CalendarActions } from "./types"
 import { useCalendarDates } from "./useCalendarDates"
 import { useCalendarHeader } from "./useCalendarHeader"
 import { filterDatesByMonth } from "./utils/filterDatesByMonth"
 
+const initialSelectedDates: Date[] = []
+
+export const initialState = {
+  selectedDates: initialSelectedDates,
+}
+
 export function useCalendar({
   initialMonth: month,
   initialSelectedDates,
 }: UseCalendarProps): UseCalendarShape {
-  const { state, dispatch } = useContext(CalendarContext)
+  const [state, dispatch] = useReducer(calendarReducer, initialState)
 
   const { selectedDates } = state
 

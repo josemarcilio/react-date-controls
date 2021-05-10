@@ -1,16 +1,29 @@
 import { getDate, getDay } from "date-fns"
-import React from "react"
+import React, { useContext } from "react"
+import { CalendarContext } from "./CalendarContext"
 import type { CalendarDateProps } from "./types"
 
-export function CalendarDate({ children, date }: CalendarDateProps) {
-  const dayOfMonth = getDate(date.value)
-  const weekday = getDay(date.value)
+export function CalendarDate({ children }: CalendarDateProps) {
+  const {
+    calendar: { dates },
+  } = useContext(CalendarContext)
 
-  const childrenValue = {
-    ...date,
-    dayOfMonth,
-    weekday,
-  }
+  return (
+    <>
+      {dates.map((date, key) => {
+        const dayOfMonth = getDate(date.value)
+        const weekday = getDay(date.value)
 
-  return <>{children(childrenValue)}</>
+        const childrenValue = {
+          date,
+          dayOfMonth,
+          weekday,
+        }
+
+        return (
+          <React.Fragment key={key}>{children(childrenValue)}</React.Fragment>
+        )
+      })}
+    </>
+  )
 }

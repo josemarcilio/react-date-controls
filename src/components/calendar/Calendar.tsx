@@ -4,7 +4,6 @@ import { CalendarProvider } from "./CalendarContext"
 import { CalendarDate } from "./CalendarDate"
 import { CalendarWeekday } from "./CalendarWeekday"
 import type { CalendarProps } from "./types"
-import { useCalendar } from "./useCalendar"
 
 function Calendar({
   children,
@@ -12,18 +11,16 @@ function Calendar({
   initialSelectedDates,
   locales = "default",
 }: CalendarProps) {
-  const calendar = useCalendar({
-    initialMonth,
-    initialSelectedDates,
-  })
-
-  const monthName = calendar.month.toLocaleString(locales, { month: "long" })
-
-  const childrenValue = { ...calendar, monthName }
+  // const monthName = calendar.month.toLocaleString(locales, { month: "long" })
 
   return (
     <LocalesContext.Provider value={locales}>
-      <CalendarProvider>{children(childrenValue)}</CalendarProvider>
+      <CalendarProvider
+        initialMonth={initialMonth}
+        initialSelectedDates={initialSelectedDates}
+      >
+        {children}
+      </CalendarProvider>
     </LocalesContext.Provider>
   )
 }

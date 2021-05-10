@@ -1,24 +1,39 @@
-import React, { createContext, useReducer } from "react"
-import calendarReducer from "./calendarReducer"
-import type { CalendarProviderProps, CalendarStoreShape } from "./types"
+import React, { createContext } from "react"
+import type {
+  CalendarProviderProps,
+  CalendarStoreShape,
+  UseCalendarShape,
+} from "./types"
+import { useCalendar } from "./useCalendar"
 
-const initialSelectedDates: Date[] = []
-
-const initialState = {
-  selectedDates: initialSelectedDates,
+const initialCalendar: UseCalendarShape = {
+  dates: [],
+  daysOfWeek: [],
+  selectedDates: [],
+  month: new Date(),
+  selectDate: () => {},
+  selectDates: () => {},
+  unselectDate: () => {},
+  clearSelectedDates: () => {},
 }
 
 const CalendarContext = createContext<CalendarStoreShape>({
-  state: initialState,
-  dispatch: () => {},
+  calendar: initialCalendar,
 })
 
 const { Provider } = CalendarContext
 
-const CalendarProvider = ({ children }: CalendarProviderProps) => {
-  const [state, dispatch] = useReducer(calendarReducer, initialState)
+function CalendarProvider({
+  children,
+  initialMonth,
+  initialSelectedDates,
+}: CalendarProviderProps) {
+  const calendar = useCalendar({
+    initialMonth,
+    initialSelectedDates,
+  })
 
-  return <Provider value={{ state, dispatch }}>{children}</Provider>
+  return <Provider value={{ calendar }}>{children}</Provider>
 }
 
 export { CalendarContext, CalendarProvider }
