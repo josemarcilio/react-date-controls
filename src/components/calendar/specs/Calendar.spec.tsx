@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom/extend-expect"
 import { render } from "@testing-library/react"
 import { getDate, getDay } from "date-fns"
+import getMonth from "date-fns/getMonth"
 import React from "react"
 import { Calendar } from "../Calendar"
 
@@ -14,6 +15,23 @@ test("should render CalendarDate component", () => {
       initialSelectedDates={[]}
       locales={locales}
     >
+      <Calendar.Header>
+        {({ date, month, monthLong, monthShort, monthNarrow }) => {
+          expect(month).toEqual(getMonth(date))
+          expect(monthLong).toEqual(
+            date.toLocaleString(locales, { month: "long" })
+          )
+          expect(monthShort).toEqual(
+            date.toLocaleString(locales, { month: "short" })
+          )
+          expect(monthNarrow).toEqual(
+            date.toLocaleString(locales, { month: "narrow" })
+          )
+
+          return <></>
+        }}
+      </Calendar.Header>
+
       <Calendar.Weekday>
         {({ date, day, long, short, narrow }) => {
           expect(day).toEqual(getDay(date))

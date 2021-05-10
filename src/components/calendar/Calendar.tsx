@@ -2,6 +2,7 @@ import React from "react"
 import { LocalesContext } from "../common/LocalesContext"
 import { CalendarProvider } from "./CalendarContext"
 import { CalendarDate } from "./CalendarDate"
+import { CalendarHeader } from "./CalendarHeader"
 import { CalendarWeekday } from "./CalendarWeekday"
 import type { CalendarProps } from "./types"
 
@@ -11,8 +12,6 @@ function Calendar({
   initialSelectedDates,
   locales = "default",
 }: CalendarProps) {
-  // const monthName = calendar.month.toLocaleString(locales, { month: "long" })
-
   return (
     <LocalesContext.Provider value={locales}>
       <CalendarProvider
@@ -25,6 +24,7 @@ function Calendar({
   )
 }
 
+Calendar.Header = CalendarHeader
 Calendar.Date = CalendarDate
 Calendar.Weekday = CalendarWeekday
 

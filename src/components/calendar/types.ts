@@ -73,6 +73,17 @@ export type CalendarProps = {
   initialSelectedDates: Date[]
   locales?: string
 }
+export interface CalendarHeaderChildrenValue {
+  date: Date
+  month: number
+  monthLong: string
+  monthShort: string
+  monthNarrow: string
+}
+
+export interface CalendarHeaderProps {
+  children: (value: CalendarHeaderChildrenValue) => ReactNode
+}
 
 export interface CalendarDateChildrenValue {
   date: CalendarDateShape
