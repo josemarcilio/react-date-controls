@@ -1,9 +1,9 @@
 <h3 align="center">
-  Headless Mule 🔥🐎
+  React Date Controls 📅
 </h3>
 
 <p align="center">
-  Headless components usually written in most of projects
+  Headless components for handling Dates
 </p>
 
 <blockquote cite="https://www.merrickchristensen.com/articles/headless-user-interface-components/">
