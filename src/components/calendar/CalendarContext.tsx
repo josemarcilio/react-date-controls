@@ -1,39 +1,28 @@
 import React, { createContext } from "react"
-import type {
-  CalendarProviderProps,
-  CalendarStoreShape,
-  UseCalendarShape,
-} from "./types"
-import { useCalendar } from "./useCalendar"
+import type { CalendarContextShape, CalendarProviderProps } from "./types"
+import { useCalendarDates } from "./useCalendarDates"
+import { useCalendarHeader } from "./useCalendarHeader"
 
-const initialCalendar: UseCalendarShape = {
+const initialCalendar: CalendarContextShape = {
   dates: [],
   daysOfWeek: [],
-  selectedDates: [],
   month: new Date(),
-  selectDate: () => {},
-  selectDates: () => {},
-  unselectDate: () => {},
-  clearSelectedDates: () => {},
 }
 
-const CalendarContext = createContext<CalendarStoreShape>({
-  calendar: initialCalendar,
-})
+const CalendarContext = createContext<CalendarContextShape>(initialCalendar)
 
 const { Provider } = CalendarContext
 
 function CalendarProvider({
   children,
-  initialMonth,
-  initialSelectedDates,
+  month,
+  selectedDates,
 }: CalendarProviderProps) {
-  const calendar = useCalendar({
-    initialMonth,
-    initialSelectedDates,
-  })
+  const { daysOfWeek } = useCalendarHeader()
 
-  return <Provider value={{ calendar }}>{children}</Provider>
+  const dates = useCalendarDates({ month, selectedDates })
+
+  return <Provider value={{ month, daysOfWeek, dates }}>{children}</Provider>
 }
 
 export { CalendarContext, CalendarProvider }

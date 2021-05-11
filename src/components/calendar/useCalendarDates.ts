@@ -1,16 +1,15 @@
 import { useEffect } from "react"
 import type { UseCalendarDatesProps, UseCalendarDatesShape } from "./types"
-import { filterDatesByMonth } from "./utils/filterDatesByMonth"
 import { generateDates } from "./utils/generateDates"
 
 export function useCalendarDates(
   props: UseCalendarDatesProps
 ): UseCalendarDatesShape {
   const { month, selectedDates } = props
-  let dates = generateDates(month, filterDatesByMonth(selectedDates, month))
+  let dates = generateDates(month, selectedDates)
 
   useEffect(() => {
-    dates = generateDates(month, filterDatesByMonth(selectedDates, month))
+    dates = generateDates(month, selectedDates)
   }, [month, selectedDates])
 
   return dates

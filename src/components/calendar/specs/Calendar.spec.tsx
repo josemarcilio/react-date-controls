@@ -10,11 +10,7 @@ test("should render CalendarDate component", () => {
   const locales = "default"
 
   render(
-    <Calendar
-      initialMonth={initialMonth}
-      initialSelectedDates={[]}
-      locales={locales}
-    >
+    <Calendar month={initialMonth} selectedDates={[]} locales={locales}>
       <Calendar.Header>
         {({ date, month, monthLong, monthShort, monthNarrow }) => {
           expect(month).toEqual(getMonth(date))

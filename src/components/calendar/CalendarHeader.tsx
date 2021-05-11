@@ -6,9 +6,7 @@ import type { CalendarHeaderProps } from "./types"
 
 export function CalendarHeader({ children }: CalendarHeaderProps) {
   const locales = useContext(LocalesContext)
-  const {
-    calendar: { month },
-  } = useContext(CalendarContext)
+  const { month } = useContext(CalendarContext)
 
   const monthLong = month.toLocaleString(locales, { month: "long" })
   const monthShort = month.toLocaleString(locales, { month: "short" })

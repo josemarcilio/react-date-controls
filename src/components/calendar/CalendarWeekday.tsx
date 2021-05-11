@@ -6,9 +6,7 @@ import type { CalendarWeekdayProps } from "./types"
 
 export function CalendarWeekday({ children }: CalendarWeekdayProps) {
   const locales = useContext(LocalesContext)
-  const {
-    calendar: { daysOfWeek },
-  } = useContext(CalendarContext)
+  const { daysOfWeek } = useContext(CalendarContext)
 
   return (
     <>

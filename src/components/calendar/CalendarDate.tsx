@@ -4,9 +4,7 @@ import { CalendarContext } from "./CalendarContext"
 import type { CalendarDateProps } from "./types"
 
 export function CalendarDate({ children }: CalendarDateProps) {
-  const {
-    calendar: { dates },
-  } = useContext(CalendarContext)
+  const { dates } = useContext(CalendarContext)
 
   return (
     <>

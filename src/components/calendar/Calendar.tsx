@@ -8,16 +8,13 @@ import type { CalendarProps } from "./types"
 
 function Calendar({
   children,
-  initialMonth,
-  initialSelectedDates,
+  month,
+  selectedDates,
   locales = "default",
 }: CalendarProps) {
   return (
     <LocalesContext.Provider value={locales}>
-      <CalendarProvider
-        initialMonth={initialMonth}
-        initialSelectedDates={initialSelectedDates}
-      >
+      <CalendarProvider {...{ month, selectedDates }}>
         {children}
       </CalendarProvider>
     </LocalesContext.Provider>

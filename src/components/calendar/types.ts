@@ -1,20 +1,8 @@
 import { ReactNode } from "react"
 
 export interface UseCalendarProps {
-  initialMonth: Date
-  initialSelectedDates: Date[]
-  onSelectDate?: (selecteDate: Date) => void
-}
-
-export interface UseCalendarShape {
   month: Date
-  dates: CalendarDateShape[]
-  daysOfWeek: Date[]
   selectedDates: Date[]
-  selectDate: (date: Date) => void
-  unselectDate: (date: Date) => void
-  selectDates: (date: Date[]) => void
-  clearSelectedDates: () => void
 }
 
 export type UseCalendarDatesProps = {
@@ -29,48 +17,22 @@ export interface CalendarDateShape {
 
 export type UseCalendarDatesShape = CalendarDateShape[]
 
-export enum CalendarActions {
-  SelectDate,
-  UnselectDate,
-  SelectDates,
-  ClearSelectedDates,
-}
-
-export type CalendarStateShape = {
-  selectedDates: Date[]
-}
-
-export type CalendarActionShape =
-  | {
-      type: CalendarActions.SelectDate
-      payload: Date
-    }
-  | {
-      type: CalendarActions.UnselectDate
-      payload: Date
-    }
-  | {
-      type: CalendarActions.SelectDates
-      payload: Date[]
-    }
-  | {
-      type: CalendarActions.ClearSelectedDates
-    }
-
 export type CalendarProviderProps = {
-  initialMonth: Date
-  initialSelectedDates: Date[]
+  month: Date
+  selectedDates: Date[]
   children: ReactNode
 }
 
-export type CalendarStoreShape = {
-  calendar: UseCalendarShape
+export type CalendarContextShape = {
+  month: Date
+  daysOfWeek: Date[]
+  dates: CalendarDateShape[]
 }
 
 export type CalendarProps = {
   children: ReactNode
-  initialMonth: Date
-  initialSelectedDates: Date[]
+  month: Date
+  selectedDates: Date[]
   locales?: string
 }
 export interface CalendarHeaderChildrenValue {
