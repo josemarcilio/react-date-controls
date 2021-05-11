@@ -26,5 +26,5 @@ export function useCalendarHeader(firstDayOfWeek = 0) {
     .slice(firstDayOfWeek, days.length)
     .concat(days.slice(0, firstDayOfWeek))
 
-  return { daysOfWeek }
+  return daysOfWeek
 }
