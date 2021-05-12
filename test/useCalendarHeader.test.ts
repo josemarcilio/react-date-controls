@@ -8,7 +8,7 @@ import {
   isTuesday,
   isWednesday,
 } from "date-fns"
-import { useCalendarHeader } from "../useCalendarHeader"
+import { useCalendarHeader } from "../src/calendar/useCalendarHeader"
 
 function assertDaysOfWeek(daysOfWeek: Date[], firstDayOfWeek = 0) {
   const validators = [

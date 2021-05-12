@@ -3,7 +3,7 @@ import { render } from "@testing-library/react"
 import { getDate, getDay } from "date-fns"
 import getMonth from "date-fns/getMonth"
 import React from "react"
-import { Calendar } from "../Calendar"
+import { Calendar } from "../src/calendar/Calendar"
 
 test("should render CalendarDate component", () => {
   const initialMonth = new Date(2021, 4, 1)
