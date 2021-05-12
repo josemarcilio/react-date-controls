@@ -1,12 +1,13 @@
 {
   "name": "react-date-controls",
-  "version": "0.0.4",
+  "version": "0.0.48",
   "license": "MIT",
   "files": [
     "dist"
   ],
   "main": "./dist/react-date-controls.umd.js",
   "module": "./dist/react-date-controls.es.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/react-date-controls.es.js",
@@ -15,7 +16,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build && tsc --emitDeclarationOnly",
     "serve": "vite preview",
     "test": "jest",
     "storybook": "start-storybook -p 6006",

@@ -12,8 +12,9 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "declaration": true,
+    "declarationDir": "dist",
+    "isolatedModules": false,
     "jsx": "react"
   },
   "include": ["./src"],

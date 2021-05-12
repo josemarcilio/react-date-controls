@@ -1,5 +1,3 @@
-import { ReactNode } from "react"
-
 export interface UseCalendarProps {
   month: Date
   selectedDates: Date[]
@@ -20,7 +18,7 @@ export type UseCalendarDatesShape = CalendarDateShape[]
 export type CalendarProviderProps = {
   month: Date
   selectedDates: Date[]
-  children: ReactNode
+  children: JSX.Element[] | JSX.Element
 }
 
 export type CalendarContextShape = {
@@ -30,14 +28,14 @@ export type CalendarContextShape = {
 }
 
 export type CalendarProps = {
-  children: ReactNode
+  children: JSX.Element[] | JSX.Element
   month: Date
   selectedDates: Date[]
   locales?: string
 }
 
 export interface CalendarDatesProps {
-  children: (value: CalendarDatesChildrenValue) => ReactNode
+  children: (value: CalendarDatesChildrenValue) => JSX.Element[] | JSX.Element
 }
 
 export interface CalendarDatesChildrenValue {
@@ -53,7 +51,7 @@ export interface CalendarHeaderChildrenValue {
 }
 
 export interface CalendarHeaderProps {
-  children: (value: CalendarHeaderChildrenValue) => ReactNode
+  children: (value: CalendarHeaderChildrenValue) => JSX.Element[] | JSX.Element
 }
 
 export interface CalendarDateChildrenValue {
@@ -63,7 +61,7 @@ export interface CalendarDateChildrenValue {
 }
 
 export interface CalendarDateProps {
-  children: (value: CalendarDateChildrenValue) => ReactNode
+  children: (value: CalendarDateChildrenValue) => JSX.Element[] | JSX.Element
 }
 
 export interface CalendarWeekdayChildrenValue {
@@ -75,5 +73,5 @@ export interface CalendarWeekdayChildrenValue {
 }
 
 export interface CalendarWeekdayProps {
-  children: (value: CalendarWeekdayChildrenValue) => ReactNode
+  children: (value: CalendarWeekdayChildrenValue) => JSX.Element[] | JSX.Element
 }

@@ -6,7 +6,7 @@ import { defineConfig } from "vite"
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/main.tsx"),
+      entry: path.resolve(__dirname, "src/index.ts"),
       name: "React Date Controls",
     },
     rollupOptions: {
