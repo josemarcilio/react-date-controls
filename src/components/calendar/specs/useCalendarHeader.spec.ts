@@ -38,14 +38,14 @@ test("should generate correct number of days of week", () => {
     useCalendarHeader(firstDayOfWeek)
   )
 
-  expect(result.current.daysOfWeek).toHaveLength(daysInWeek)
+  expect(result.current).toHaveLength(daysInWeek)
 
-  assertDaysOfWeek(result.current.daysOfWeek)
+  assertDaysOfWeek(result.current)
 
   for (let i = 0; i < daysInWeek; i++) {
     firstDayOfWeek = i
     rerender()
 
-    assertDaysOfWeek(result.current.daysOfWeek, firstDayOfWeek)
+    assertDaysOfWeek(result.current, firstDayOfWeek)
   }
 })

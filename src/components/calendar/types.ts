@@ -35,6 +35,15 @@ export type CalendarProps = {
   selectedDates: Date[]
   locales?: string
 }
+
+export interface CalendarDatesProps {
+  children: (value: CalendarDatesChildrenValue) => ReactNode
+}
+
+export interface CalendarDatesChildrenValue {
+  firstWeekday: 0 | 1 | 2 | 3 | 4 | 5 | 6
+}
+
 export interface CalendarHeaderChildrenValue {
   date: Date
   month: number
