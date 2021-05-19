@@ -3,11 +3,20 @@ import { Calendar } from "react-date-controls"
 
 function App() {
   const initialMonth = new Date(2021, 4, 1)
+  const selectedDates = [
+    new Date(2021, 4, 2),
+    new Date(2021, 4, 3),
+    new Date(2021, 4, 4),
+  ]
   const locales = "default"
 
   return (
     <div className="container mx-auto p-2 text-gray-600">
-      <Calendar month={initialMonth} selectedDates={[]} locales={locales}>
+      <Calendar
+        month={initialMonth}
+        selectedDates={selectedDates}
+        locales={locales}
+      >
         <div className="flex p-2 bg-gray-50 border-b justify-center">
           <Calendar.Header>
             {({ month, year, monthLong, monthShort, monthNarrow }) => {
@@ -65,9 +74,13 @@ function App() {
                 ></div>
 
                 <Calendar.Date>
-                  {({ dayOfMonth }) => {
+                  {({ date, dayOfMonth }) => {
                     return (
-                      <div className="flex p-8 justify-center items-center font-bold text-xl border-l">
+                      <div
+                        className={`flex p-8 justify-center items-center font-bold text-xl border-l ${
+                          date.isSelected && "bg-blue-50"
+                        }`}
+                      >
                         <div className="flex flex-col">
                           <span>{dayOfMonth}</span>
                         </div>
