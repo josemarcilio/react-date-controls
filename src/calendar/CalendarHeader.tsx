@@ -1,3 +1,4 @@
+import { getYear } from "date-fns"
 import getMonth from "date-fns/getMonth"
 import React, { useContext } from "react"
 import { LocalesContext } from "../common/LocalesContext"
@@ -6,6 +7,7 @@ import { CalendarContext } from "./CalendarContext"
 export interface HeadlessCalendarHeader {
   date: Date
   month: number
+  year: number
   monthLong: string
   monthShort: string
   monthNarrow: string
@@ -26,6 +28,7 @@ export function CalendarHeader({ children }: CalendarHeaderProps) {
   const headlessValues = {
     date: month,
     month: getMonth(month),
+    year: getYear(month),
     monthLong,
     monthShort,
     monthNarrow,

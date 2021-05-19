@@ -10,18 +10,22 @@ function App() {
       <Calendar month={initialMonth} selectedDates={[]} locales={locales}>
         <div className="flex p-2 bg-gray-50 border-b justify-center">
           <Calendar.Header>
-            {({ month, monthLong, monthShort, monthNarrow }) => {
+            {({ month, year, monthLong, monthShort, monthNarrow }) => {
               return (
                 <div className="flex items-center justify-between w-full gap-2">
                   <div className="w-10 h-10 flex justify-center items-center bg-red-300 text-white font-bold rounded-full">
                     {1 + month}
                   </div>
 
-                  <div className="flex flex-col">
-                    <span className="font-bold text-xl capitalize">
-                      {monthLong}
-                    </span>
-                    <span className="text-xs">{monthShort}</span>
+                  <div className="flex">
+                    <div className="flex flex-col">
+                      <span className="font-bold text-xl capitalize">
+                        {monthLong}
+                      </span>
+                      <span className="text-xs">{monthShort}</span>
+                    </div>
+
+                    <span>{year}</span>
                   </div>
 
                   <div className="w-10 h-10 flex justify-center items-center bg-blue-300 text-white font-bold rounded-full">
