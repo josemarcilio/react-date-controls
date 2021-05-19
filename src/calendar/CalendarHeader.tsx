@@ -3,7 +3,7 @@ import React, { useContext } from "react"
 import { LocalesContext } from "../common/LocalesContext"
 import { CalendarContext } from "./CalendarContext"
 
-export interface CalendarHeaderChildrenValue {
+export interface HeadlessCalendarHeader {
   date: Date
   month: number
   monthLong: string
@@ -12,7 +12,7 @@ export interface CalendarHeaderChildrenValue {
 }
 
 export interface CalendarHeaderProps {
-  children: (value: CalendarHeaderChildrenValue) => JSX.Element[] | JSX.Element
+  children: (value: HeadlessCalendarHeader) => JSX.Element[] | JSX.Element
 }
 
 export function CalendarHeader({ children }: CalendarHeaderProps) {
@@ -23,7 +23,7 @@ export function CalendarHeader({ children }: CalendarHeaderProps) {
   const monthShort = month.toLocaleString(locales, { month: "short" })
   const monthNarrow = month.toLocaleString(locales, { month: "narrow" })
 
-  const values = {
+  const headlessValues = {
     date: month,
     month: getMonth(month),
     monthLong,
@@ -31,5 +31,5 @@ export function CalendarHeader({ children }: CalendarHeaderProps) {
     monthNarrow,
   }
 
-  return <>{children(values)}</>
+  return <>{children(headlessValues)}</>
 }

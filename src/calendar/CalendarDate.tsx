@@ -3,14 +3,14 @@ import React, { useContext } from "react"
 import { CalendarContext } from "./CalendarContext"
 import { CalendarDateShape } from "./useCalendarDates"
 
-export interface CalendarDateChildrenValue {
+export interface HeadlessCalendarDate {
   date: CalendarDateShape
   dayOfMonth: number
   weekday: 0 | 1 | 2 | 3 | 4 | 5 | 6
 }
 
 export interface CalendarDateProps {
-  children: (value: CalendarDateChildrenValue) => JSX.Element[] | JSX.Element
+  children: (value: HeadlessCalendarDate) => JSX.Element[] | JSX.Element
 }
 
 export function CalendarDate({ children }: CalendarDateProps) {
@@ -22,14 +22,14 @@ export function CalendarDate({ children }: CalendarDateProps) {
         const dayOfMonth = getDate(date.value)
         const weekday = getDay(date.value)
 
-        const childrenValue = {
+        const headlessValues = {
           date,
           dayOfMonth,
           weekday,
         }
 
         return (
-          <React.Fragment key={key}>{children(childrenValue)}</React.Fragment>
+          <React.Fragment key={key}>{children(headlessValues)}</React.Fragment>
         )
       })}
     </>

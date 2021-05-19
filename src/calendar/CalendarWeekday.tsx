@@ -3,7 +3,7 @@ import React, { useContext } from "react"
 import { LocalesContext } from "../common/LocalesContext"
 import { CalendarContext } from "./CalendarContext"
 
-export interface CalendarWeekdayChildrenValue {
+export interface HeadlessCalendarWeekday {
   date: Date
   day: 0 | 1 | 2 | 3 | 4 | 5 | 6
   long: string
@@ -12,7 +12,7 @@ export interface CalendarWeekdayChildrenValue {
 }
 
 export interface CalendarWeekdayProps {
-  children: (value: CalendarWeekdayChildrenValue) => JSX.Element[] | JSX.Element
+  children: (value: HeadlessCalendarWeekday) => JSX.Element[] | JSX.Element
 }
 
 export function CalendarWeekday({ children }: CalendarWeekdayProps) {
@@ -29,7 +29,7 @@ export function CalendarWeekday({ children }: CalendarWeekdayProps) {
           weekday: "narrow",
         })
 
-        const childrenValue = {
+        const headlessValues = {
           date,
           day,
           long,
@@ -38,7 +38,7 @@ export function CalendarWeekday({ children }: CalendarWeekdayProps) {
         }
 
         return (
-          <React.Fragment key={key}>{children(childrenValue)}</React.Fragment>
+          <React.Fragment key={key}>{children(headlessValues)}</React.Fragment>
         )
       })}
     </>
