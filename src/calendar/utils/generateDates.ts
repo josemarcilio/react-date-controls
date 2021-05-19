@@ -6,7 +6,7 @@ import {
   startOfMonth,
 } from "date-fns"
 import isEqual from "date-fns/isEqual"
-import { CalendarDateShape } from "../types"
+import { CalendarDateShape } from "../useCalendarDates"
 
 export function generateDates(month: Date, selectedDates: Date[]) {
   let dates: CalendarDateShape[] = []

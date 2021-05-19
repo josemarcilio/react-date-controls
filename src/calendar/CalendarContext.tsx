@@ -1,7 +1,18 @@
 import React, { createContext } from "react"
-import type { CalendarContextShape, CalendarProviderProps } from "./types"
-import { useCalendarDates } from "./useCalendarDates"
+import { CalendarDateShape, useCalendarDates } from "./useCalendarDates"
 import { useCalendarHeader } from "./useCalendarHeader"
+
+export type CalendarContextShape = {
+  month: Date
+  daysOfWeek: Date[]
+  dates: CalendarDateShape[]
+}
+
+export type CalendarProviderProps = {
+  month: Date
+  selectedDates: Date[]
+  children: JSX.Element[] | JSX.Element
+}
 
 const CalendarContext = createContext<CalendarContextShape>({
   dates: [],

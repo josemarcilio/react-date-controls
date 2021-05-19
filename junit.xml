@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="4" failures="0" errors="0" time="4.456">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-12T15:38:31" time="2.627" tests="1">
-    <testcase classname=" should generate correct number of days of week" name=" should generate correct number of days of week" time="0.024">
+<testsuites name="jest tests" tests="4" failures="0" errors="0" time="4.207">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-18T23:12:01" time="1.674" tests="1">
+    <testcase classname=" should generate correct number of days of week" name=" should generate correct number of days of week" time="0.027">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-12T15:38:31" time="2.635" tests="2">
-    <testcase classname=" should start without selected dates" name=" should start without selected dates" time="0.015">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-18T23:12:01" time="1.684" tests="2">
+    <testcase classname=" should start without selected dates" name=" should start without selected dates" time="0.019">
     </testcase>
-    <testcase classname=" should start with selected dates" name=" should start with selected dates" time="0.006">
+    <testcase classname=" should start with selected dates" name=" should start with selected dates" time="0.004">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-12T15:38:31" time="3.324" tests="1">
-    <testcase classname=" should render CalendarDate component" name=" should render CalendarDate component" time="0.042">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-05-18T23:12:01" time="2.298" tests="1">
+    <testcase classname=" should render CalendarDate component" name=" should render CalendarDate component" time="0.068">
     </testcase>
   </testsuite>
 </testsuites>

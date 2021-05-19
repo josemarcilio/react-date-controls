@@ -21,10 +21,6 @@ Merrick Christensen in his [article about Headless User Inteface Components](htt
 
 ## Running this project
 
-### Storybook
-
-`npm run storybook`
-
 ### Development server
 
 `npm run dev`
@@ -32,3 +28,7 @@ Merrick Christensen in his [article about Headless User Inteface Components](htt
 ### Build
 
 `npm run build`
+
+### Test
+
+`npm run test`

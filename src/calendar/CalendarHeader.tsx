@@ -2,7 +2,18 @@ import getMonth from "date-fns/getMonth"
 import React, { useContext } from "react"
 import { LocalesContext } from "../common/LocalesContext"
 import { CalendarContext } from "./CalendarContext"
-import type { CalendarHeaderProps } from "./types"
+
+export interface CalendarHeaderChildrenValue {
+  date: Date
+  month: number
+  monthLong: string
+  monthShort: string
+  monthNarrow: string
+}
+
+export interface CalendarHeaderProps {
+  children: (value: CalendarHeaderChildrenValue) => JSX.Element[] | JSX.Element
+}
 
 export function CalendarHeader({ children }: CalendarHeaderProps) {
   const locales = useContext(LocalesContext)

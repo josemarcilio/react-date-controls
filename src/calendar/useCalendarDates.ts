@@ -1,6 +1,17 @@
 import { useEffect } from "react"
-import type { UseCalendarDatesProps, UseCalendarDatesShape } from "./types"
 import { generateDates } from "./utils/generateDates"
+
+export interface CalendarDateShape {
+  value: Date
+  isSelected: boolean
+}
+
+export type UseCalendarDatesProps = {
+  month: Date
+  selectedDates: Date[]
+}
+
+export type UseCalendarDatesShape = CalendarDateShape[]
 
 export function useCalendarDates(
   props: UseCalendarDatesProps

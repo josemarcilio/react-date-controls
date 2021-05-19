@@ -18,9 +18,7 @@
     "dev": "vite",
     "build": "vite build && tsc --emitDeclarationOnly",
     "serve": "vite preview",
-    "test": "jest",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "jest"
   },
   "dependencies": {
     "date-fns": "^2.21.1",
@@ -31,9 +29,6 @@
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.0",
     "@babel/preset-typescript": "^7.13.0",
-    "@storybook/addon-essentials": "^6.2.9",
-    "@storybook/addon-links": "^6.2.9",
-    "@storybook/react": "^6.2.9",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^11.2.6",
     "@testing-library/react-hooks": "^5.1.2",

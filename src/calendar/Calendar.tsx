@@ -5,12 +5,18 @@ import { CalendarDate } from "./CalendarDate"
 import { CalendarDates } from "./CalendarDates"
 import { CalendarHeader } from "./CalendarHeader"
 import { CalendarWeekday } from "./CalendarWeekday"
-import type { CalendarProps } from "./types"
+
+export type CalendarProps = {
+  children: JSX.Element[] | JSX.Element
+  month?: Date
+  selectedDates?: Date[]
+  locales?: string
+}
 
 function Calendar({
   children,
-  month,
-  selectedDates,
+  month = new Date(),
+  selectedDates = [],
   locales = "default",
 }: CalendarProps) {
   return (
@@ -28,3 +34,4 @@ Calendar.Date = CalendarDate
 Calendar.Weekday = CalendarWeekday
 
 export { Calendar }
+

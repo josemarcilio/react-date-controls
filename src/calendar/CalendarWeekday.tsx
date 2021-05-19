@@ -2,7 +2,18 @@ import { getDay } from "date-fns"
 import React, { useContext } from "react"
 import { LocalesContext } from "../common/LocalesContext"
 import { CalendarContext } from "./CalendarContext"
-import type { CalendarWeekdayProps } from "./types"
+
+export interface CalendarWeekdayChildrenValue {
+  date: Date
+  day: 0 | 1 | 2 | 3 | 4 | 5 | 6
+  long: string
+  short: string
+  narrow: string
+}
+
+export interface CalendarWeekdayProps {
+  children: (value: CalendarWeekdayChildrenValue) => JSX.Element[] | JSX.Element
+}
 
 export function CalendarWeekday({ children }: CalendarWeekdayProps) {
   const locales = useContext(LocalesContext)
