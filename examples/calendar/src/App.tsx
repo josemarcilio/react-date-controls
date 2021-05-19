@@ -6,7 +6,7 @@ function App() {
   const locales = "default"
 
   return (
-    <div className="container mx-auto text-gray-600">
+    <div className="container mx-auto p-2 text-gray-600">
       <Calendar month={initialMonth} selectedDates={[]} locales={locales}>
         <div className="flex p-2 bg-gray-50 border-b justify-center">
           <Calendar.Header>
@@ -17,15 +17,15 @@ function App() {
                     {1 + month}
                   </div>
 
-                  <div className="flex">
-                    <div className="flex flex-col">
+                  <div className="flex gap-2 items-center">
+                    <span className="text-2xl text-gray-400">{year}</span>
+
+                    <div className="flex flex-col items-center">
                       <span className="font-bold text-xl capitalize">
                         {monthLong}
                       </span>
                       <span className="text-xs">{monthShort}</span>
                     </div>
-
-                    <span>{year}</span>
                   </div>
 
                   <div className="w-10 h-10 flex justify-center items-center bg-blue-300 text-white font-bold rounded-full">
@@ -56,19 +56,29 @@ function App() {
           </Calendar.Weekday>
         </div>
 
-        <div className="grid grid-cols-7">
-          <Calendar.Date>
-            {({ dayOfMonth }) => {
-              return (
-                <div className="flex p-8 justify-center items-center font-bold text-xl border-l">
-                  <div className="flex flex-col">
-                    <span>{dayOfMonth}</span>
-                  </div>
-                </div>
-              )
-            }}
-          </Calendar.Date>
-        </div>
+        <Calendar.Dates>
+          {({ firstWeekday }) => (
+            <>
+              <div className="grid grid-cols-7">
+                <div
+                  className={`col-start-1 col-end-${1 + firstWeekday}`}
+                ></div>
+
+                <Calendar.Date>
+                  {({ dayOfMonth }) => {
+                    return (
+                      <div className="flex p-8 justify-center items-center font-bold text-xl border-l">
+                        <div className="flex flex-col">
+                          <span>{dayOfMonth}</span>
+                        </div>
+                      </div>
+                    )
+                  }}
+                </Calendar.Date>
+              </div>
+            </>
+          )}
+        </Calendar.Dates>
       </Calendar>
     </div>
   )

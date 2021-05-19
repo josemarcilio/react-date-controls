@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview",
-    "preinstall": "npm link ../../node_modules/react"
+    "serve": "vite preview"
   },
   "dependencies": {
     "react": "^17.0.0",
