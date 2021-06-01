@@ -2,6 +2,7 @@
   React Date Controls 📅
 </h3>
 
+
 <p align="center">
   Headless components for handling Dates
 </p>
@@ -14,6 +15,8 @@
 Merrick Christensen in his [article about Headless User Inteface Components](https://www.merrickchristensen.com/articles/headless-user-interface-components/)
 
 </blockquote>
+
+[![npm-publish](https://github.com/tpmarc/react-date-controls/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/tpmarc/react-date-controls/actions/workflows/npm-publish.yml)
 
 ## List of Components
 
