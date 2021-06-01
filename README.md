@@ -1,10 +1,11 @@
-<h3 align="center">
-  React Date Controls 📅
-</h3>
+<div align="center">
 
+![react-date-controls](logo.svg)
+
+</div>
 
 <p align="center">
-  Headless components for handling Dates
+  Headless components for Dates
 </p>
 
 <blockquote cite="https://www.merrickchristensen.com/articles/headless-user-interface-components/">
