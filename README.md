@@ -21,7 +21,7 @@ Merrick Christensen in his [article about Headless User Inteface Components](htt
 
 ## List of Components
 
-- [Calendar](https://github.com/tpmarc/headless-mule/tree/main/src/components/calendar)
+- [Calendar](https://github.com/tpmarc/react-date-controls/tree/main/src/calendar)
 
 ## Running this project
 
