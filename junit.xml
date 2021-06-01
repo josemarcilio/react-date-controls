@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="12" failures="0" errors="0" time="3.27">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-06-01T00:44:38" time="1.37" tests="2">
-    <testcase classname=" should start without selected dates" name=" should start without selected dates" time="0.017">
-    </testcase>
-    <testcase classname=" should start with selected dates" name=" should start with selected dates" time="0.005">
+<testsuites name="jest tests" tests="11" failures="0" errors="0" time="4.87">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-06-01T00:54:57" time="1.359" tests="1">
+    <testcase classname=" should generate correct number of days of week" name=" should generate correct number of days of week" time="0.033">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-06-01T00:44:38" time="1.379" tests="1">
-    <testcase classname=" should generate correct number of days of week" name=" should generate correct number of days of week" time="0.029">
+  <testsuite name="useCalendarDates" errors="0" failures="0" skipped="0" timestamp="2021-06-01T00:54:57" time="1.339" tests="1">
+    <testcase classname="useCalendarDates should start with selected dates" name="useCalendarDates should start with selected dates" time="0.017">
     </testcase>
   </testsuite>
-  <testsuite name="&lt;Calendar.Dates /&gt;" errors="0" failures="0" skipped="0" timestamp="2021-06-01T00:44:38" time="1.837" tests="1">
-    <testcase classname="&lt;Calendar.Dates /&gt; should render the correct first day of month" name="&lt;Calendar.Dates /&gt; should render the correct first day of month" time="0.027">
-    </testcase>
-  </testsuite>
-  <testsuite name="&lt;Calendar.Header /&gt;" errors="0" failures="0" skipped="0" timestamp="2021-06-01T00:44:38" time="1.842" tests="4">
-    <testcase classname="&lt;Calendar.Header /&gt; should render month correctly" name="&lt;Calendar.Header /&gt; should render month correctly" time="0.027">
+  <testsuite name="&lt;Calendar.Header /&gt;" errors="0" failures="0" skipped="0" timestamp="2021-06-01T00:54:57" time="3.328" tests="4">
+    <testcase classname="&lt;Calendar.Header /&gt; should render month correctly" name="&lt;Calendar.Header /&gt; should render month correctly" time="0.028">
     </testcase>
     <testcase classname="&lt;Calendar.Header /&gt; should render long name of month correctly" name="&lt;Calendar.Header /&gt; should render long name of month correctly" time="0.004">
     </testcase>
     <testcase classname="&lt;Calendar.Header /&gt; should render month correctly" name="&lt;Calendar.Header /&gt; should render month correctly" time="0.003">
     </testcase>
-    <testcase classname="&lt;Calendar.Header /&gt; should render month correctly" name="&lt;Calendar.Header /&gt; should render month correctly" time="0.004">
+    <testcase classname="&lt;Calendar.Header /&gt; should render month correctly" name="&lt;Calendar.Header /&gt; should render month correctly" time="0.003">
     </testcase>
   </testsuite>
-  <testsuite name="&lt;Calendar.Date /&gt;" errors="0" failures="0" skipped="0" timestamp="2021-06-01T00:44:38" time="1.863" tests="1">
-    <testcase classname="&lt;Calendar.Date /&gt; should render all days of month correctly" name="&lt;Calendar.Date /&gt; should render all days of month correctly" time="0.068">
+  <testsuite name="&lt;Calendar.Date /&gt;" errors="0" failures="0" skipped="0" timestamp="2021-06-01T00:54:57" time="3.341" tests="1">
+    <testcase classname="&lt;Calendar.Date /&gt; should render all days of month correctly" name="&lt;Calendar.Date /&gt; should render all days of month correctly" time="0.067">
     </testcase>
   </testsuite>
-  <testsuite name="&lt;Calendar.Weekday /&gt;" errors="0" failures="0" skipped="0" timestamp="2021-06-01T00:44:38" time="1.87" tests="3">
-    <testcase classname="&lt;Calendar.Weekday /&gt; should render long names correctly" name="&lt;Calendar.Weekday /&gt; should render long names correctly" time="0.045">
+  <testsuite name="&lt;Calendar.Dates /&gt;" errors="0" failures="0" skipped="0" timestamp="2021-06-01T00:54:57" time="3.353" tests="1">
+    <testcase classname="&lt;Calendar.Dates /&gt; should render the correct first day of month" name="&lt;Calendar.Dates /&gt; should render the correct first day of month" time="0.026">
     </testcase>
-    <testcase classname="&lt;Calendar.Weekday /&gt; should render short names correctly" name="&lt;Calendar.Weekday /&gt; should render short names correctly" time="0.011">
+  </testsuite>
+  <testsuite name="&lt;Calendar.Weekday /&gt;" errors="0" failures="0" skipped="0" timestamp="2021-06-01T00:54:57" time="3.426" tests="3">
+    <testcase classname="&lt;Calendar.Weekday /&gt; should render long names correctly" name="&lt;Calendar.Weekday /&gt; should render long names correctly" time="0.048">
     </testcase>
-    <testcase classname="&lt;Calendar.Weekday /&gt; should render narrow names correctly" name="&lt;Calendar.Weekday /&gt; should render narrow names correctly" time="0.015">
+    <testcase classname="&lt;Calendar.Weekday /&gt; should render short names correctly" name="&lt;Calendar.Weekday /&gt; should render short names correctly" time="0.009">
+    </testcase>
+    <testcase classname="&lt;Calendar.Weekday /&gt; should render narrow names correctly" name="&lt;Calendar.Weekday /&gt; should render narrow names correctly" time="0.009">
     </testcase>
   </testsuite>
 </testsuites>

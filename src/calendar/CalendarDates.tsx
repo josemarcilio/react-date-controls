@@ -13,7 +13,7 @@ export interface CalendarDatesProps {
 export function CalendarDates({ children }: CalendarDatesProps) {
   const { dates } = useContext(CalendarContext)
   const [firstDate] = dates
-  const firstWeekday = getDay(firstDate.value)
+  const firstWeekday = getDay(firstDate)
 
   const headlessValues = {
     firstWeekday,

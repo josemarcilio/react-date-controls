@@ -1,10 +1,9 @@
 import { getDate, getDay } from "date-fns"
 import React, { useContext } from "react"
 import { CalendarContext } from "./CalendarContext"
-import { CalendarDateShape } from "./useCalendarDates"
 
 export interface HeadlessCalendarDate {
-  date: CalendarDateShape
+  date: Date
   dayOfMonth: number
   weekday: 0 | 1 | 2 | 3 | 4 | 5 | 6
 }
@@ -19,8 +18,8 @@ export function CalendarDate({ children }: CalendarDateProps) {
   return (
     <>
       {dates.map((date, key) => {
-        const dayOfMonth = getDate(date.value)
-        const weekday = getDay(date.value)
+        const dayOfMonth = getDate(date)
+        const weekday = getDay(date)
 
         const headlessValues = {
           date,

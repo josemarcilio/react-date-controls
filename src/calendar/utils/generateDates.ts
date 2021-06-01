@@ -1,26 +1,15 @@
-import {
-  addDays,
-  endOfMonth,
-  isBefore,
-  startOfDay,
-  startOfMonth,
-} from "date-fns"
+import { addDays, endOfMonth, isBefore, startOfMonth } from "date-fns"
 import isEqual from "date-fns/isEqual"
-import { CalendarDateShape } from "../useCalendarDates"
 
-export function generateDates(month: Date, selectedDates: Date[]) {
-  let dates: CalendarDateShape[] = []
+export function generateDates(month: Date): Date[] {
+  let dates: Date[] = []
   let cursor = startOfMonth(month)
 
   while (
     isBefore(cursor, endOfMonth(month)) ||
     isEqual(cursor, endOfMonth(month))
   ) {
-    const isSelected = selectedDates.some((date) =>
-      isEqual(startOfDay(date), startOfDay(cursor))
-    )
-
-    dates.push({ value: cursor, isSelected })
+    dates.push(cursor)
     cursor = addDays(cursor, 1)
   }
 
