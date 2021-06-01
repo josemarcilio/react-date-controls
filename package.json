@@ -1,6 +1,6 @@
 {
   "name": "react-date-controls",
-  "version": "0.0.64",
+  "version": "0.0.65",
   "license": "MIT",
   "files": [
     "dist"
