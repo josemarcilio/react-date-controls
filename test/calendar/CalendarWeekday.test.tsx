@@ -23,33 +23,31 @@ describe("<Calendar.Weekday />", () => {
 
   test("should render short names correctly", () => {
     const { getByText } = render(
-      <Calendar month={new Date(2021, 4, 1)} locales="pt-BR">
+      <Calendar month={new Date(2021, 4, 1)} locales="en">
         <Calendar.Weekday>{({ short }) => <p>{short}</p>}</Calendar.Weekday>
       </Calendar>
     )
 
-    expect(getByText(/^dom.$/i)).toBeDefined()
-    expect(getByText(/^seg.$/i)).toBeDefined()
-    expect(getByText(/^ter.$/i)).toBeDefined()
-    expect(getByText(/^qua.$/i)).toBeDefined()
-    expect(getByText(/^qui.$/i)).toBeDefined()
-    expect(getByText(/^sex.$/i)).toBeDefined()
-    expect(getByText(/^sáb.$/i)).toBeDefined()
+    expect(getByText(/^sun$/i)).toBeDefined()
+    expect(getByText(/^mon$/i)).toBeDefined()
+    expect(getByText(/^tue$/i)).toBeDefined()
+    expect(getByText(/^wed$/i)).toBeDefined()
+    expect(getByText(/^thu$/i)).toBeDefined()
+    expect(getByText(/^fri$/i)).toBeDefined()
+    expect(getByText(/^sat$/i)).toBeDefined()
   })
 
   test("should render narrow names correctly", () => {
-    const { getByText } = render(
-      <Calendar month={new Date(2021, 4, 1)} locales="es">
+    const { getByText, getAllByText } = render(
+      <Calendar month={new Date(2021, 4, 1)} locales="en">
         <Calendar.Weekday>{({ narrow }) => <p>{narrow}</p>}</Calendar.Weekday>
       </Calendar>
     )
 
-    expect(getByText(/^d$/i)).toBeDefined()
-    expect(getByText(/^l$/i)).toBeDefined()
+    expect(getAllByText(/^s$/i)).toHaveLength(2)
+    expect(getAllByText(/^t$/i)).toHaveLength(2)
     expect(getByText(/^m$/i)).toBeDefined()
-    expect(getByText(/^x$/i)).toBeDefined()
-    expect(getByText(/^j$/i)).toBeDefined()
-    expect(getByText(/^v$/i)).toBeDefined()
-    expect(getByText(/^s$/i)).toBeDefined()
+    expect(getByText(/^w$/i)).toBeDefined()
+    expect(getByText(/^f$/i)).toBeDefined()
   })
 })
