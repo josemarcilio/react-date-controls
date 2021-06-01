@@ -20,7 +20,9 @@
     "serve": "vite preview",
     "test": "jest",
     "coverage": "jest --coverage",
-    "release-patch": "npm run build && npm version patch -m \"Release %s\""
+    "prerelease-patch": "npm run build",
+    "release-patch": "npm version patch -m \"Release %s\"",
+    "postrelease-patch": "git push"
   },
   "dependencies": {
     "date-fns": "^2.21.1"
