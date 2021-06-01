@@ -5,7 +5,7 @@ import { Calendar } from "../../src/calendar/Calendar"
 describe("<Calendar.Header />", () => {
   test("should render month correctly", () => {
     render(
-      <Calendar month={new Date(2021, 4, 1)} selectedDates={[]}>
+      <Calendar month={new Date(2021, 4, 1)}>
         <Calendar.Header>
           {({ month }) => {
             expect(month).toEqual(4)
@@ -18,7 +18,7 @@ describe("<Calendar.Header />", () => {
 
   test("should render long name of month correctly", () => {
     render(
-      <Calendar month={new Date(2021, 3, 1)} selectedDates={[]} locales="en">
+      <Calendar month={new Date(2021, 3, 1)} locales="en">
         <Calendar.Header>
           {({ monthLong }) => {
             expect(monthLong).toEqual("April")
@@ -31,10 +31,10 @@ describe("<Calendar.Header />", () => {
 
   test("should render month correctly", () => {
     render(
-      <Calendar month={new Date(2021, 8, 1)} selectedDates={[]} locales="pt-BR">
+      <Calendar month={new Date(2021, 8, 1)} locales="en">
         <Calendar.Header>
           {({ monthShort }) => {
-            expect(monthShort).toEqual("set.")
+            expect(monthShort).toEqual("Sep")
             return <></>
           }}
         </Calendar.Header>
@@ -44,7 +44,7 @@ describe("<Calendar.Header />", () => {
 
   test("should render month correctly", () => {
     render(
-      <Calendar month={new Date(2021, 11, 1)} selectedDates={[]} locales="es">
+      <Calendar month={new Date(2021, 11, 1)} locales="en">
         <Calendar.Header>
           {({ monthNarrow }) => {
             expect(monthNarrow).toEqual("D")
