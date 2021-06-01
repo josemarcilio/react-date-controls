@@ -19,7 +19,8 @@
     "build": "vite build && tsc --emitDeclarationOnly",
     "serve": "vite preview",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "release-patch": "npm version patch -m \"Release %s\""
   },
   "dependencies": {
     "date-fns": "^2.21.1",
