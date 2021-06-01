@@ -76,11 +76,7 @@ function App() {
                 <Calendar.Date>
                   {({ date, dayOfMonth }) => {
                     return (
-                      <div
-                        className={`flex p-8 justify-center items-center font-bold text-xl border-l ${
-                          date.isSelected && "bg-blue-50"
-                        }`}
-                      >
+                      <div className="flex p-8 justify-center items-center font-bold text-xl border-l">
                         <div className="flex flex-col">
                           <span>{dayOfMonth}</span>
                         </div>
