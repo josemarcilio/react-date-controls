@@ -10,7 +10,6 @@ export type CalendarContextShape = {
 
 export type CalendarProviderProps = {
   month: Date
-  selectedDates: Date[]
   children: JSX.Element[] | JSX.Element
 }
 

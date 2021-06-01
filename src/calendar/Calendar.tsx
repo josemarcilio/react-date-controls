@@ -9,29 +9,24 @@ import { CalendarWeekday } from "./CalendarWeekday"
 export type CalendarProps = {
   children: JSX.Element[] | JSX.Element
   month?: Date
-  selectedDates?: Date[]
   locales?: string
 }
 
 function Calendar({
   children,
   month = new Date(),
-  selectedDates = [],
   locales = "default",
 }: CalendarProps) {
   return (
     <LocalesContext.Provider value={locales}>
-      <CalendarProvider {...{ month, selectedDates }}>
-        {children}
-      </CalendarProvider>
+      <CalendarProvider month={month}>{children}</CalendarProvider>
     </LocalesContext.Provider>
   )
 }
 
+Calendar.Date = CalendarDate
 Calendar.Dates = CalendarDates
 Calendar.Header = CalendarHeader
-Calendar.Date = CalendarDate
 Calendar.Weekday = CalendarWeekday
 
 export { Calendar }
-
