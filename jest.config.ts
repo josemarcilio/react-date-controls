@@ -5,7 +5,7 @@ export default {
   testPathIgnorePatterns: ["/node_modules/"],
   coverageDirectory: "./coverage",
   coveragePathIgnorePatterns: ["node_modules"],
-  reporters: ["default", "jest-junit"],
+  reporters: ["default"],
   globals: { "ts-jest": { diagnostics: false } },
   transform: {},
 }
