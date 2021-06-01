@@ -21,8 +21,7 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "prerelease-patch": "npm run build",
-    "release-patch": "npm version patch -m \"Release %s\"",
-    "postrelease-patch": "git push"
+    "release-patch": "npm version patch -m \"Release %s\""
   },
   "dependencies": {
     "date-fns": "^2.21.1"
